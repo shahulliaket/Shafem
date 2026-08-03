@@ -170,6 +170,119 @@ const modalClose = document.getElementById("modalClose");
 const modalTitle = document.getElementById("modalTitle");
 const modalBody = document.getElementById("modalBody");
 const navbar = document.getElementById("navbar");
+const googleSignInContainer = document.getElementById("googleSignInContainer");
+const authStatus = document.getElementById("authStatus");
+const userProfile = document.getElementById("userProfile");
+const GOOGLE_CLIENT_ID = "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com";
+
+function parseJwt(token) {
+  try {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(atob(base64).split('').map((c) => {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+    return JSON.parse(jsonPayload);
+  } catch (error) {
+    console.warn('Failed to parse Google credential:', error);
+    return null;
+  }
+}
+
+function resetAuthUi() {
+  if (userProfile) {
+    userProfile.hidden = true;
+    userProfile.innerHTML = "";
+  }
+  if (authStatus) {
+    authStatus.textContent = "Connect your Google account to continue.";
+  }
+}
+
+function displayUser(user) {
+  if (!userProfile || !authStatus) return;
+  userProfile.hidden = false;
+  userProfile.innerHTML = `
+    <img src="${user.picture || 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y'}" alt="${user.name}" />
+    <div>
+      <strong>${user.name}</strong>
+      <span>${user.email}</span>
+    </div>
+    <button class="auth-signout-btn" type="button">Sign out</button>
+  `;
+  authStatus.textContent = `Welcome back, ${user.name}!`;
+}
+
+function handleCredentialResponse(response) {
+  const payload = parseJwt(response.credential);
+  if (!payload) {
+    authStatus.textContent = "We could not read your Google sign-in response. Please try again.";
+    return;
+  }
+
+  const user = {
+    name: payload.name || payload.given_name || "Google user",
+    email: payload.email || "",
+    picture: payload.picture || ""
+  };
+
+  displayUser(user);
+  localStorage.setItem("shafemGoogleUser", JSON.stringify(user));
+}
+
+function restoreAuthSession() {
+  const cachedUser = localStorage.getItem("shafemGoogleUser");
+  if (!cachedUser) return;
+  try {
+    displayUser(JSON.parse(cachedUser));
+  } catch (error) {
+    localStorage.removeItem("shafemGoogleUser");
+    resetAuthUi();
+  }
+}
+
+function initializeGoogleAuth() {
+  if (!googleSignInContainer || !authStatus || !userProfile) return;
+
+  if (!window.google?.accounts?.id) {
+    authStatus.textContent = "Google sign-in is unavailable right now. Please try again later.";
+    return;
+  }
+
+  const isPlaceholderClientId = GOOGLE_CLIENT_ID.includes("YOUR_GOOGLE_CLIENT_ID");
+  if (isPlaceholderClientId) {
+    googleSignInContainer.innerHTML = '<div class="auth-placeholder">Replace the placeholder Google client ID to enable sign-in.</div>';
+    authStatus.textContent = "Add your Google OAuth client ID to enable sign-in.";
+    return;
+  }
+
+  window.google.accounts.id.initialize({
+    client_id: GOOGLE_CLIENT_ID,
+    callback: handleCredentialResponse,
+    auto_select: false,
+    cancel_on_tap_outside: false
+  });
+
+  window.google.accounts.id.renderButton(googleSignInContainer, {
+    theme: "outline",
+    size: "large",
+    text: "continue_with",
+    shape: "pill",
+    logo_alignment: "left"
+  });
+}
+
+window.addEventListener("load", () => {
+  restoreAuthSession();
+  initializeGoogleAuth();
+});
+
+document.addEventListener("click", (event) => {
+  const signOutButton = event.target.closest(".auth-signout-btn");
+  if (!signOutButton) return;
+  localStorage.removeItem("shafemGoogleUser");
+  resetAuthUi();
+});
 
 
 // ===== RENDER CERTIFICATE CARDS =====

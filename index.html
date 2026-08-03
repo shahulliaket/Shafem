@@ -26,6 +26,7 @@
       <li><a href="#features" id="nav-features">Why Us</a></li>
       <li><a href="#process" id="nav-process">Process</a></li>
       <li><a href="#directory" id="nav-directory">Directory</a></li>
+      <li><a href="#news" id="nav-news">News & Media</a></li>
       <li><a href="#contact" id="nav-contact">Contact</a></li>
       <li><a href="#directory" class="nav-cta" id="nav-cta-btn">Search Certificates</a></li>
     </ul>
@@ -55,6 +56,18 @@
         <a href="#process" class="btn btn-secondary" id="hero-cta-learn">
           Learn More →
         </a>
+      </div>
+      <div class="hero-auth-card reveal">
+        <div class="hero-auth-head">
+          <div class="hero-auth-icon">🔐</div>
+          <div>
+            <h3>Secure access</h3>
+            <p>Sign in with Google to access your account and receive verified updates.</p>
+          </div>
+        </div>
+        <div id="googleSignInContainer" class="google-signin-container"></div>
+        <p id="authStatus" class="auth-status">Connect your Google account to continue.</p>
+        <div id="userProfile" class="user-profile" hidden></div>
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
@@ -206,6 +219,54 @@
     </div>
   </section>
 
+  <!-- ========== NEWS & MEDIA ========== -->
+  <section id="news">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="overline">News & Media</span>
+        <h2>Fresh updates and media highlights</h2>
+        <p>Explore our latest announcements, industry insights, and visual stories from the field.</p>
+      </div>
+      <div class="news-grid">
+        <article class="news-card reveal">
+          <p class="news-meta">August 3, 2026 • Press Release</p>
+          <h3>Shafem expands its accreditation support for emerging industries</h3>
+          <p>Our team has launched a new service stream for digital-first organizations seeking faster validation and compliance readiness.</p>
+          <a href="#contact">Request a consultation →</a>
+        </article>
+        <article class="news-card reveal">
+          <p class="news-meta">July 18, 2026 • Industry Insight</p>
+          <h3>Why transparent certificates matter more than ever</h3>
+          <p>We share practical guidance for leaders building public trust through verifiable, high-integrity credentials.</p>
+          <a href="#directory">Browse the directory →</a>
+        </article>
+        <article class="news-card reveal">
+          <p class="news-meta">June 24, 2026 • Community Update</p>
+          <h3>New regional partnerships strengthen global accreditation access</h3>
+          <p>We partnered with regional experts to make accreditation support more accessible for organizations across new markets.</p>
+          <a href="#contact">Speak with our team →</a>
+        </article>
+      </div>
+      <div class="media-grid">
+        <div class="media-card reveal">
+          <div class="media-icon">🎥</div>
+          <h3>Accreditation roundtable</h3>
+          <p>Watch our leadership team discuss trust, compliance, and sector-specific validation priorities.</p>
+        </div>
+        <div class="media-card reveal">
+          <div class="media-icon">📸</div>
+          <h3>Behind the scenes</h3>
+          <p>See how our specialists review submissions and prepare clients for renewed compliance confidence.</p>
+        </div>
+        <div class="media-card reveal">
+          <div class="media-icon">📰</div>
+          <h3>Press features</h3>
+          <p>Read our latest coverage in business and compliance media as we expand our market reach.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== CTA ========== -->
   <section class="cta-section" id="contact">
     <div class="container">
@@ -281,6 +342,7 @@
     </div>
   </div>
 
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js"></script>
 </body>
