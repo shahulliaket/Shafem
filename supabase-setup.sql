@@ -1,5 +1,5 @@
 -- =============================================
--- AccredVault — Supabase Setup Script
+-- Shafem Technical Solution LLC — Supabase Setup Script
 -- Run this in your Supabase SQL Editor
 -- (Dashboard → SQL Editor → New Query)
 -- =============================================
