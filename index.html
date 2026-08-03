@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AccredVault — Trusted Accreditation & Certificate Directory</title>
+  <meta name="description" content="AccredVault is the premier accreditation platform. Browse our directory of accredited certificates, verify credentials, and maintain compliance with ease." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- Animated background -->
+  <div class="bg-mesh" aria-hidden="true"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo">
+      <span class="logo-icon">🛡️</span>
+      AccredVault
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active" id="nav-home">Home</a></li>
+      <li><a href="#features" id="nav-features">Why Us</a></li>
+      <li><a href="#process" id="nav-process">Process</a></li>
+      <li><a href="#directory" id="nav-directory">Directory</a></li>
+      <li><a href="#contact" id="nav-contact">Contact</a></li>
+      <li><a href="#directory" class="nav-cta" id="nav-cta-btn">Search Certificates</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        Trusted by 2,500+ Organizations
+      </div>
+      <h1>
+        Your Trusted <span class="gradient-text">Accreditation</span> Partner
+      </h1>
+      <p>
+        AccredVault streamlines the accreditation lifecycle — from application to renewal. 
+        Search our comprehensive directory of accredited certificates and verify credentials instantly.
+      </p>
+      <div class="hero-actions">
+        <a href="#directory" class="btn btn-primary" id="hero-cta-directory">
+          🔍 Browse Directory
+        </a>
+        <a href="#process" class="btn btn-secondary" id="hero-cta-learn">
+          Learn More →
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="number" id="stat-certs">12,400+</div>
+          <div class="label">Certificates Issued</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number" id="stat-orgs">2,500+</div>
+          <div class="label">Organizations</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number" id="stat-countries">48</div>
+          <div class="label">Countries</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating orbital visual -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-orbit"><span class="hero-orbit-dot"></span></div>
+      <div class="hero-orbit"><span class="hero-orbit-dot"></span></div>
+      <div class="hero-orbit"><span class="hero-orbit-dot"></span></div>
+      <div class="hero-center-icon">🛡️</div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES ========== -->
+  <section id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="overline">Why AccredVault</span>
+        <h2>Built for Modern Accreditation</h2>
+        <p>We combine rigorous standards with a seamless digital experience to make accreditation accessible and transparent.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal" id="feature-verification">
+          <div class="feature-icon">✅</div>
+          <h3>Instant Verification</h3>
+          <p>Verify any accredited certificate in seconds through our real-time directory. Public and transparent for all stakeholders.</p>
+        </div>
+        <div class="feature-card reveal" id="feature-compliance">
+          <div class="feature-icon">📋</div>
+          <h3>Compliance Tracking</h3>
+          <p>Automated reminders, renewal tracking, and audit readiness tools to keep your accreditation status current.</p>
+        </div>
+        <div class="feature-card reveal" id="feature-global">
+          <div class="feature-icon">🌍</div>
+          <h3>Global Standards</h3>
+          <p>Aligned with international frameworks including ISO, ANAB, and regional accreditation bodies across 48 countries.</p>
+        </div>
+        <div class="feature-card reveal" id="feature-security">
+          <div class="feature-icon">🔐</div>
+          <h3>Secure & Tamper-Proof</h3>
+          <p>Blockchain-anchored records ensure certificates cannot be altered or forged, providing unquestionable trust.</p>
+        </div>
+        <div class="feature-card reveal" id="feature-api">
+          <div class="feature-icon">⚡</div>
+          <h3>API Integration</h3>
+          <p>Embed verification into your own platforms with our RESTful API. Real-time lookups and webhook notifications.</p>
+        </div>
+        <div class="feature-card reveal" id="feature-support">
+          <div class="feature-icon">💬</div>
+          <h3>Dedicated Support</h3>
+          <p>Our accreditation specialists guide you through every stage — from initial application to successful renewal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESS ========== -->
+  <section id="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="overline">How It Works</span>
+        <h2>Accreditation Made Simple</h2>
+        <p>A streamlined four-step process designed to get you accredited efficiently and keep you compliant.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal" id="step-apply">
+          <div class="step-num">1</div>
+          <h3>Apply Online</h3>
+          <p>Submit your accreditation application with supporting documents through our secure portal.</p>
+        </div>
+        <div class="process-step reveal" id="step-review">
+          <div class="step-num">2</div>
+          <h3>Expert Review</h3>
+          <p>Our panel of domain experts evaluates your submission against established standards.</p>
+        </div>
+        <div class="process-step reveal" id="step-certify">
+          <div class="step-num">3</div>
+          <h3>Get Certified</h3>
+          <p>Upon approval, receive your accreditation certificate with a unique verifiable credential.</p>
+        </div>
+        <div class="process-step reveal" id="step-maintain">
+          <div class="step-num">4</div>
+          <h3>Maintain & Renew</h3>
+          <p>Stay accredited with our renewal tracking, continuous monitoring, and compliance tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DIRECTORY ========== -->
+  <section id="directory">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="overline">Certificate Directory</span>
+        <h2>Accredited Certificate Registry</h2>
+        <p>Search and verify accredited organizations and their certificates. Our directory is updated in real-time.</p>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="directory-toolbar reveal">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            id="directorySearch"
+            placeholder="Search by organization, certificate ID, or standard..."
+            autocomplete="off"
+          />
+        </div>
+        <div class="filter-chips" id="filterChips">
+          <button class="chip active" data-filter="all" id="filter-all">All</button>
+          <button class="chip" data-filter="active" id="filter-active">Active</button>
+          <button class="chip" data-filter="pending" id="filter-pending">Pending</button>
+          <button class="chip" data-filter="expired" id="filter-expired">Expired</button>
+        </div>
+      </div>
+
+      <!-- Results info -->
+      <div class="directory-results-info reveal" id="directoryResultsInfo">
+        <div class="results-count">
+          Showing <span id="resultsCount">0</span> certificates
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <div class="directory-grid" id="directoryGrid">
+        <!-- Cards are injected by JS -->
+      </div>
+
+      <!-- Empty state -->
+      <div class="directory-empty" id="directoryEmpty" style="display:none;">
+        <div class="empty-icon">🔎</div>
+        <h3>No certificates found</h3>
+        <p>Try adjusting your search query or filter to find what you're looking for.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta-box reveal">
+        <h2>Ready to Get Accredited?</h2>
+        <p>Join thousands of organizations that trust AccredVault for their accreditation needs. Start your journey today.</p>
+        <a href="#" class="btn btn-primary" id="cta-apply-btn">Begin Application →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <span class="logo-icon">🛡️</span>
+          AccredVault
+        </div>
+        <p>Empowering organizations with trusted, transparent accreditation services since 2018.</p>
+      </div>
+      <div class="footer-links-group">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#directory">Directory</a></li>
+          <li><a href="#">API Docs</a></li>
+          <li><a href="#">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-group">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-group">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 AccredVault. All rights reserved.</span>
+      <span>Built with trust & transparency</span>
+    </div>
+  </footer>
+
+  <!-- ========== MODAL ========== -->
+  <div class="modal-overlay" id="certModal">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+      <h2 id="modalTitle">Certificate Details</h2>
+      <div id="modalBody">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
